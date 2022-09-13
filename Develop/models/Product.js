@@ -35,9 +35,12 @@ Product.init(
         isNumeric: true,   
       }
     },
-    catefory_id: {
+    category_id: {
       type: DataTypes.INTEGER,
-      foreign
+      references: {
+        model: 'category',
+        key: 'id',
+      },
     },   
   },
   {
