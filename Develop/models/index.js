@@ -16,17 +16,13 @@ onDelete: 'CASCADE'
 });
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
-through: {
-  model: ProductTag,
+through: ProductTag,
   foreignKey: 'product_id',
-},
 });
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-through: {
-  model: ProductTag,
+through: ProductTag,
   foreignKey: 'tag_id',
-}
 });
 
 module.exports = {
